@@ -6,28 +6,29 @@
                 "Action": [
                     "ecr:DescribeImages"
                 ],
-                "Resource": 
+                "Resource": "arn:aws:ecs:us-east-1:423623848303:service/DevCluster/*"
             },
             {
                 "Effect": "Allow",
                 "Action": [
-                    "ecs:DescribeImages"
+                    "ecs:DescribeServices"
                 ],
-                "Resource": 
+                "Resource": "arn:aws:ecs:us-east-1:423623848303:service/DevCluster/*"
             },
             {
                 "Effect": "Allow",
                 "Action": [
-                    "ssm:"
+                    "ssm:PutParameter"
                 ],
-                "Resource": 
+                "Resource": "arn:aws:ssm:us-east-1:423623848303:parameter/ecs-services/version/*"
             },
             {
                 "Effect": "Allow",
                 "Action": [
-                    "s3:"
+                    "s3:GetObject",
+                    "s3:GetObjectVersion"
                 ],
-                "Resource": 
-            },
+                "Resource": "arn:aws:s3:::test-use1-lambda-functions/*"
+            }
         ]
 }
